@@ -13,9 +13,10 @@ public class Singleton01 {
 
     }
     // 在类的内部先创建一个SingleTon01对象
-    private static Singleton01 instance = new Singleton01();
+    private final static Singleton01 instance = new Singleton01();
 
     // 对外提供静态方法，获取内部生成是静态实例。
+    // 静态的方式提供实例，没有实现懒加载的特性，导致如果在没有使用的前提下，资源浪费。
     public static Singleton01 getInstance() {
         return instance;
     }
